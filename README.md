@@ -21,5 +21,13 @@ Questa è una semplice applicazione web per la gestione di attività (to-do list
 Visualizza l'app funzionante:  
 👉 [https://chico34-glitch.github.io/todo_app](https://chico34-glitch.github.io/todo_app)
 
-## 📁 Struttura del progetto
+## 📁 Struttura del progettotodo_app/
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+
+## 📄 Autore
+
+👨‍💻 Creato da [Chico34-glitch](https://github.com/Chico34-glitch)
 
