@@ -1,48 +1,23 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const taskText = input.value.trim();
+  if (taskText === "") return;
 
-.container {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-}
+  const li = document.createElement("li");
+  li.textContent = taskText;
 
-input {
-  width: 70%;
-  padding: 8px;
-}
+  li.onclick = function () {
+    li.classList.toggle("completed");
+  };
 
-button {
-  padding: 8px;
-  margin-left: 5px;
-  cursor: pointer;
-}
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "❌";
+  deleteBtn.onclick = function (e) {
+    e.stopPropagation();
+    li.remove();
+  };
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-li {
-  padding: 8px;
-  background: #eee;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-li.completed {
-  text-decoration: line-through;
-  color: gray;
+  li.appendChild(deleteBtn);
+  document.getElementById("taskList").appendChild(li);
+  input.value = "";
 }
